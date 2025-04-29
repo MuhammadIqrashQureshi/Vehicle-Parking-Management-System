@@ -1,0 +1,42 @@
+{
+  "total": 7,
+  "passed": 1,
+  "failed": 6,
+  "details": [
+    {
+      "testName": "Empty form submission",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 664)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Email mismatch validation",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 655)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Password mismatch validation",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 647)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Wrong current password validation",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 628)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Short password validation (7 chars)",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 608)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Valid password change",
+      "status": "failed",
+      "error": "element click intercepted: Element is not clickable at point (632, 585)\n  (Session info: chrome=136.0.7103.48)"
+    },
+    {
+      "testName": "Access without login",
+      "status": "passed",
+      "error": null
+    }
+  ]
+}
