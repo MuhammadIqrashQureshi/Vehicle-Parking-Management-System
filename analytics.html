@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span id="portalTitle">Admin Portal</span>
+        </div>
+        <div class="nav-links">
+            <a href="admin.html"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="registered.html"><i class="fas fa-users"></i> Users</a>
+            <a href="analytics.html" class="active"><i class="fas fa-chart-bar"></i> Analytics</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="reviewfeedback.html"><i class="fas fa-comments"></i> View Feedback</a>
+
+        </div>
+        <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <div class="welcome-text">
+                <h1>Analytics Dashboard</h1>
+                <p>Monitor system performance and user activity metrics.</p>
+            </div>
+            <div class="action-buttons">
+                <button class="btn primary-btn"><i class="fas fa-download"></i> Export Report</button>
+                <button class="btn secondary-btn"><i class="fas fa-sync-alt"></i><a href="analytics.html"></a> Refresh Data</button>
+            </div>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Total Users</h3>
+                    <p class="stat-number" id="totalUsers">Loading...</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Active Slots</h3>
+                    <p class="stat-number" id="activeSlots">Loading...</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Bookings</h3>
+                    <p class="stat-number" id="totalBookings">Loading...</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Utilization</h3>
+                    <p class="stat-number" id="utilization">Loading...</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Growth Rate</h3>
+                    <p class="stat-number" id="growthRate">Loading...</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="stat-details">
+                    <h3>Completion Rate</h3>
+                    <p class="stat-number" id="completionRate">Loading...</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- User Activity Chart Section -->
+        <div class="table-container">
+            <div class="table-header">
+                <h2><i class="fas fa-chart-line"></i> User Activity</h2>
+                <div class="table-actions">
+                    <select class="filter-dropdown">
+                        <option value="week">Last Week</option>
+                        <option value="month" selected>Last Month</option>
+                        <option value="quarter">Last Quarter</option>
+                        <option value="year">Last Year</option>
+                    </select>
+                </div>
+            </div>
+            <div style="height: 300px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 20px;">
+                <canvas id="activityChart" style="width: 100%; height: 100%;"></canvas>
+            </div>
+
+            <div class="chart-row">
+                <!-- Users & Slots Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-users"></i> Users & Slots Overview</h3>
+                    </div>
+                    <canvas id="usersSlotsChart"></canvas>
+                </div>
+                
+                <!-- Growth & Completion Chart -->
+                <div class="chart-container">
+                    <div class="chart-header">
+                        <h3><i class="fas fa-trend-up"></i> Growth & Completion Rates</h3>
+                    </div>
+                    <canvas id="ratesChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Utilization Chart -->
+            <div class="chart-container full-width">
+                <div class="chart-header">
+                    <h3><i class="fas fa-chart-pie"></i> System Utilization</h3>
+                </div>
+                <canvas id="utilizationChart"></canvas>
+            </div>
+        </div>
+
+      
+
+
+        
+    </div>
+
+    <script src="analytics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="portalName.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>Vehicle Management System</title>
+    <link rel="stylesheet" type="text/css" href="mainpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div> 
+
+    <header>
+        <div class="navbar">
+            <div class="left-nav">
+                <a href="mainpage.html" class="logo-link">
+                    <i class="fas fa-car-side"></i>
+                    <span>VehicleMS</span>
+                </a>
+            </div>
+            <div class="right-nav">        
+                <a href="mybookings.html" class="nav-btn"><i class="fas fa-calendar-check"></i> My Bookings</a>
+                <a href="changepassword.html" class="nav-btn"><i class="fas fa-key"></i> Change Password</a>
+                <a href="login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="main-content">
+        <div class="hero-content">
+            <h1>Welcome to Vehicle Management System</h1>
+            <p>Your Ultimate Solution for Efficient Vehicle Tracking & Management</p>
+            
+            <div class="feature-highlights">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Easy Scheduling</h3>
+                    <p>Book slots in advance</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Real-time Tracking</h3>
+                    <p>Monitor vehicles effortlessly</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Enhanced Security</h3>
+                    <p>Know who's handling vehicles</p>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="bookSlotBtn" class="primary-btn">
+                    <i class="fas fa-calendar-plus"></i> Book a Slot
+                </button>
+                <button onclick="window.location.href='checkin.html'" class="secondary-btn">
+                    <i class="fas fa-sign-in-alt"></i> Vehicle Check-in
+                </button>
+                <button onclick="window.location.href='checkout.html'" class="secondary-btn">
+                    <i class="fas fa-sign-out-alt"></i> Vehicle Check-out
+                </button>
+                <button onclick="window.location.href='feedback.html'" class="secondary-btn">
+                    <i class="fas fa-comment-dots"></i> Give Feedback
+                </button>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Add the Ask AI chat button with pulsing arrow -->
+    <div class="chat-ai-container" onclick="window.location.href='chat.html'">
+        <div class="chat-ai-arrow">
+            <i class="fas fa-arrow-down"></i>
+        </div>
+        <div class="chat-ai-button">
+            <i class="fas fa-robot"></i>
+            <span>Ask AI</span>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Vehicle Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("bookSlotBtn").addEventListener("click", function () {
+                window.location.href = "bookslot.html";
+            });
+        });
+    </script>
+</body>
+</html>
