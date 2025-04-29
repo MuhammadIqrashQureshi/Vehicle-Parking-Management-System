@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+}
+
+body {
+    background: url('mybackground.png') no-repeat center center/cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+}
+
+/* Background Overlay with Gradient */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(12, 41, 72, 0.85), rgba(25, 29, 55, 0.9));
+    z-index: -1;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(15, 15, 20, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar li {
+    margin: 0 10px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color: #f8c291;
+}
+
+.home-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.login-btn {
+    padding: 8px 20px;
+    background: linear-gradient(45deg, #d63333, #e74c3c);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3);
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(231, 76, 60, 0.4);
+    background: linear-gradient(45deg, #c62828, #d32f2f);
+}
+
+/* Page Content */
+.content {
+    z-index: 2;
+    position: relative;
+    margin-top: 80px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    background: #d63333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #b72828;
+}
+
+/* Bookings List */
+.bookings-list {
+    margin-top: 20px;
+    text-align: center;
+    width: 60%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto; 
+    max-height: 300px;
+}
+
+.booking-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-bottom: 10px;
+    color: black; /* 🟢 Makes text black */
+    border-radius: 5px;
+    text-align: left;
+}
+html {
+    scroll-behavior: smooth;
+}
+.booking-item {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 350px;
+    height: 180px;
+    position: relative;
+}
+
+.booking-card {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.booking-item:hover .booking-card {
+    transform: rotateY(180deg);
+}
+
+.booking-card .front, .booking-card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+.booking-card .front {
+    background: white;
+    color: black;
+}
+
+.booking-card .back {
+    background: #d63333;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.bookings-list-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.no-bookings {
+    font-size: 1.2rem;
+    color: lightgray;
+}
+.cancel-btn {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background: #ff4444;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 5px;
+}
+
+.cancel-btn:hover {
+    background: #cc0000;
+}
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Page Fade-in Effect */
+body {
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loader Animation */
+#loader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0c2948;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid white;
+    border-top: 5px solid #d63333;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Smooth Slide-in Animation */
+.slide-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content {
+        width: 90%;
+    }
+
+    .bookings-list {
+        width: 90%;
+    }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>VMS Chat Assistant</title>
+    <link rel="stylesheet" href="chat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="overlay"></div>
+    <nav class="navbar">
+        <div class="left-nav">
+            <a href="index.html" class="logo-link">
+                <i class="fas fa-car-side"></i>
+                <span>VMS Portal</span>
+            </a>
+        </div>
+        <div class="right-nav">
+            <a href="mainpage.html" class="nav-btn">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </a>
+            <a href="mybookings.html" class="nav-btn">
+                <i class="far fa-calendar-check"></i>
+                My Bookings
+            </a>
+            <a href="mainpage1.html" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="chat-container">
+            <div class="chat-header">
+                <i class="fas fa-robot"></i>
+                <h2>VMS Assistant</h2>
+                <div class="chat-status">
+                    <span class="status-dot"></span>
+                    <span>Online</span>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here dynamically -->
+            </div>
+            
+            <div class="chat-input-container">
+                <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                <button id="sendButton">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <div class="suggested-questions">
+                <p>Suggested questions:</p>
+                <div class="suggestions">
+                    <button class="suggestion-btn">How do I book a vehicle?</button>
+                    <button class="suggestion-btn">View my bookings</button>
+                    <button class="suggestion-btn">How to check in?</button>
+                    <button class="suggestion-btn">How to check out?</button>
+                    <button class="suggestion-btn">How to register?</button>
+                    <button class="suggestion-btn">How to book a slot?</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Vehicle Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="help.html">Help Center</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="chat.js"></script>
+</body>
+</html>
