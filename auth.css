@@ -1,0 +1,433 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: url('mybackground.png') no-repeat center center/cover;
+    min-height: 100vh;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Background Overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(9, 29, 51, 0.85), rgba(15, 34, 60, 0.9));
+    z-index: 0;
+  }
+  
+  /* Navigation Bar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 25, 40, 0.95);
+    padding: 15px 30px;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .left-nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+  
+  .logo-link i {
+    margin-right: 10px;
+    color: #4d9de0;
+    font-size: 1.6rem;
+  }
+  
+  .logo-link:hover {
+    color: #4d9de0;
+  }
+  
+  /* Authentication Container */
+  .auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .auth-card {
+    background: rgba(20, 25, 40, 0.85);
+    border-radius: 15px;
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .auth-header i {
+    font-size: 3rem;
+    color: #4d9de0;
+    margin-bottom: 15px;
+    display: block;
+  }
+  
+  .auth-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .auth-header p {
+    color: #a0a0a0;
+    font-size: 1rem;
+  }
+  
+  /* Form Elements */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .input-container:focus-within {
+    border-color: #4d9de0;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 2px rgba(77, 157, 224, 0.25);
+  }
+  
+  .input-container i {
+    color: #4d9de0;
+    font-size: 1.1rem;
+    margin-right: 12px;
+  }
+  
+  .input-container input,
+  .input-container select {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+  
+  .input-container input::placeholder {
+    color: #b0b0b0;
+  }
+  
+  .input-container select {
+    appearance: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234d9de0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 10px center;
+    padding-right: 30px;
+    cursor: pointer;
+  }
+  
+  .input-container select option {
+    background-color: #14192c;
+    color: white;
+  }
+  
+  /* Role Select Container - Adjusted for better select dropdown visibility */
+  .role-container {
+    padding-right: 10px;
+  }
+  
+  /* Remember & Forgot Section */
+  .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d0d0d0;
+    cursor: pointer;
+  }
+  
+  .remember input {
+    accent-color: #4d9de0;
+  }
+  
+  .forgot-link {
+    color: #4d9de0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .forgot-link:hover {
+    color: #7ab5e7;
+    text-decoration: underline;
+  }
+  
+  /* Terms Checkbox */
+  .terms-checkbox {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+  }
+  
+  .terms-checkbox label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #d0d0d0;
+    cursor: pointer;
+  }
+  
+  .terms-checkbox input {
+    margin-top: 3px;
+    accent-color: #4d9de0;
+  }
+  
+  .terms-checkbox a {
+    color: #4d9de0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  
+  .terms-checkbox a:hover {
+    color: #7ab5e7;
+    text-decoration: underline;
+  }
+  
+  /* Buttons */
+  .auth-button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #4d9de0, #2a78b6);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .auth-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(77, 157, 224, 0.3);
+    background: linear-gradient(45deg, #3d8cd0, #1967a5);
+  }
+  
+  .secondary-button {
+    width: 100%;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .secondary-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  /* Button Group (for pages with multiple buttons) */
+  .button-group {
+    margin-top: 15px;
+  }
+  
+  /* Status Message */
+  .status-message {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  .status-message.success {
+    background-color: rgba(39, 174, 96, 0.2);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+  }
+  
+  .status-message.error {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+  }
+  
+  /* Auth Footer */
+  .auth-footer {
+    text-align: center;
+    margin-top: 25px;
+    color: #a0a0a0;
+    font-size: 0.95rem;
+  }
+  
+  .auth-footer a {
+    color: #4d9de0;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  
+  .auth-footer a:hover {
+    color: #7ab5e7;
+    text-decoration: underline;
+  }
+  
+  /* Password Requirements */
+  .password-requirements {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: rgba(77, 157, 224, 0.1);
+    border: 1px solid rgba(77, 157, 224, 0.3);
+  }
+  
+  .password-requirements p {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-requirements i {
+    color: #4d9de0;
+    margin-right: 8px;
+  }
+  
+  /* Footer */
+  footer {
+    background: rgba(20, 25, 40, 0.95);
+    padding: 20px 30px;
+    margin-top: auto;
+    z-index: 10;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .footer-content p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #d0d0d0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #4d9de0;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .auth-card {
+      padding: 30px 20px;
+    }
+    
+    .auth-header h2 {
+      font-size: 1.6rem;
+    }
+    
+    .remember-forgot {
+      flex-direction: column;
+      gap: 15px;
+      align-items: flex-start;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .navbar {
+      padding: 12px 15px;
+    }
+    
+    .auth-container {
+      padding: 80px 15px;
+    }
+    
+    .auth-header i {
+      font-size: 2.5rem;
+    }
+    
+    .auth-header h2 {
+      font-size: 1.4rem;
+    }
+  }
