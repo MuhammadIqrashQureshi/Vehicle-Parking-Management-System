@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>Feedback Review | Admin Portal</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="reviewfeedback.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="overlay"></div>
+    
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-cube"></i>
+            <span id="portalTitle">Admin Portal</span>
+        </div>
+        <div class="nav-links">
+            <a href="admin.html"><i class="fas fa-home"></i> Dashboard</a>
+            <a href="registered.html"><i class="fas fa-users"></i> Users</a>
+            <a href="analytics.html"><i class="fas fa-chart-bar"></i> Analytics</a>
+            <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+            <a href="reviewfeedback.html" class="active"><i class="fas fa-comments"></i> View Feedback</a>
+        </div>
+        <button id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <div class="welcome-text">
+                <h1>User Feedback</h1>
+                <p>Review and analyze user feedback submissions</p>
+            </div>
+            <div class="action-buttons">
+                <button id="backBtn" class="back-btn" onclick="window.history.back()">
+                    <i class="fas fa-arrow-left"></i> Back
+                </button>
+            </div>
+        </div>
+
+        <div class="feedback-container">
+            <div class="feedback-header">
+                <h2><i class="fas fa-comment-dots"></i> Feedback Records</h2>
+                <div class="table-actions">
+                    <div class="search-box">
+                        <input type="text" id="feedbackSearch" placeholder="Search feedback...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <select class="filter-dropdown" id="ratingFilter">
+                        <option value="all">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4 Stars</option>
+                        <option value="3">3 Stars</option>
+                        <option value="2">2 Stars</option>
+                        <option value="1">1 Star</option>
+                    </select>
+                </div>
+            </div>
+            
+            <table class="feedback-table">
+                <thead>
+                    <tr>
+                        <th><i class="fas fa-user"></i> User</th>
+                        <th><i class="fas fa-star"></i> Rating</th>
+                        <th><i class="fas fa-comment"></i> Comments</th>
+                        <th><i class="fas fa-calendar"></i> Date</th>
+                    </tr>
+                </thead>
+                <tbody id="feedbackTableBody">
+                    <!-- Feedback data will be loaded here -->
+                </tbody>
+            </table>
+            
+            <div class="pagination" id="feedbackPagination"></div>
+        </div>
+    </div>
+
+    <script src="reviewfeedback.js"></script>
+    <script src="portalName.js"></script>
+</body>
+</html>

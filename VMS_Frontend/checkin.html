@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>Vehicle Check-in</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="check.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <div class="overlay"></div> 
+    <header>
+        <div class="navbar">
+            <ul class="left-nav">
+                <li>
+                    <a href="mainpage.html">
+                        <img src="icon.png" alt="Home Icon" class="home-icon">
+                        Home
+                    </a>
+                </li>
+            </ul>
+            <ul class="right-nav">        
+                <button id="backButton" onclick="history.back()">← Back</button>
+            </ul>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Vehicle Check-in</h1>
+        <form id="checkInForm">
+            <label for="userEmail">Email Address</label>
+            <input type="email" id="userEmail" placeholder="Enter your email address" required>
+        
+            <label for="checkInVehicleNumber">Vehicle Number</label>
+            <input type="text" id="checkInVehicleNumber" placeholder="Enter your vehicle number" required>
+            
+            <button type="submit" id="checkInBtn">Complete Check-in</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        // Show message with animation
+        function showMessage(text, isSuccess = true) {
+            const messageEl = document.getElementById('message');
+            messageEl.textContent = text;
+            messageEl.style.background = isSuccess ? 
+                'rgba(46, 213, 115, 0.2)' : 'rgba(255, 71, 87, 0.2)';
+            messageEl.classList.add('show');
+        }
+        
+        // Animation on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.querySelector('.content');
+            setTimeout(() => {
+                content.style.opacity = '1';
+                content.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+
+    <script src="checkin.js"></script>
+</body>
+</html>
