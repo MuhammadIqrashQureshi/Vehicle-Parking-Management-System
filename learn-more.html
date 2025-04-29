@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <title>Learn More</title>
+    <link rel="stylesheet" type="text/css" href="mainpage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .section-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-align: center;
+        }
+        
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #d0d0d0;
+            margin-bottom: 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-card i {
+            color: #4d9de0;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+        
+        .feature-card p {
+            font-size: 1rem;
+            color: #d0d0d0;
+        }
+        
+        .faq-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.1rem;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: #d0d0d0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <header>
+        <div class="navbar">
+            <div class="left-nav">
+                <a href="mainpage.html" class="logo-link">
+                    <i class="fas fa-car-side"></i>
+                    <span>VehicleMS</span>
+                </a>
+            </div>
+            <div class="right-nav">        
+                <a href="login.html" class="auth-btn login"><i class="fas fa-user"></i> Login</a>
+                <a href="signup.html" class="auth-btn signup"><i class="fas fa-user-plus"></i> Signup</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content" style="padding-top: 100px; justify-content: flex-start;">
+        <section class="section" id="about">
+            <div class="section-content">
+                <h2>About Vehicle Management System</h2>
+                <p>Vehicle Management System (VehicleMS) is a comprehensive solution designed to streamline all aspects of fleet management, vehicle tracking, and maintenance scheduling. Our platform helps businesses and organizations of all sizes to optimize their vehicle operations, reduce costs, and improve efficiency.</p>
+                <p>Developed with cutting-edge technology and user experience in mind, VehicleMS provides real-time insights into your fleet's performance, allowing you to make data-driven decisions that enhance productivity and extend the lifespan of your vehicles.</p>
+            </div>
+        </section>
+
+        <section class="section" id="features">
+            <div class="section-content">
+                <h2>Key Features</h2>
+                <p>Our Vehicle Management System offers a wide range of features designed to simplify your fleet management processes:</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Booking Management</h3>
+                        <p>Streamlined booking process with automated approval workflows and conflict resolution for maximum efficiency.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Real-time Tracking</h3>
+                        <p>Monitor vehicle locations in real-time with advanced GPS integration and geofencing capabilities.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-tools"></i>
+                        <h3>Maintenance Scheduling</h3>
+                        <p>Automated maintenance reminders based on mileage or time intervals to keep your fleet in optimal condition.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <h3>Expense Tracking</h3>
+                        <p>Comprehensive expense management for fuel, repairs, insurance, and other vehicle-related costs.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Analytics Dashboard</h3>
+                        <p>Interactive dashboards with actionable insights on fleet performance, utilization, and cost analysis.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-bell"></i>
+                        <h3>Alert System</h3>
+                        <p>Instant notifications for maintenance needs, booking requests, vehicle returns, and emergency situations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="benefits">
+            <div class="section-content">
+                <h2>Benefits</h2>
+                <p>Implementing VehicleMS in your organization offers numerous advantages:</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-piggy-bank"></i>
+                        <h3>Cost Reduction</h3>
+                        <p>Minimize operational costs through optimized routing, preventive maintenance, and reduced vehicle downtime.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Enhanced Efficiency</h3>
+                        <p>Streamlined processes and automated workflows save time and improve productivity across your organization.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Improved Safety</h3>
+                        <p>Regular maintenance tracking and driver behavior monitoring contribute to safer operations and fewer accidents.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Environmental Impact</h3>
+                        <p>Reduce fuel consumption and emissions through optimized routing and improved vehicle maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="section-content">
+                <h2>Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How secure is the Vehicle Management System?
+                    </div>
+                    <div class="faq-answer">
+                        VehicleMS employs industry-leading security measures including end-to-end encryption, multi-factor authentication, and regular security audits to ensure your data is protected at all times.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can VehicleMS be customized for our specific needs?
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! Our system is highly customizable to accommodate the unique requirements of your organization, regardless of fleet size or industry.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is technical support included with the subscription?
+                    </div>
+                    <div class="faq-answer">
+                        Yes, all subscriptions include dedicated technical support from our experienced team, available via email, phone, or live chat during business hours.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does implementation typically take?
+                    </div>
+                    <div class="faq-answer">
+                        Implementation timeframes vary based on your organization's size and requirements, but most clients are fully operational within 2-4 weeks, including training sessions for your team.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Vehicle Management System. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple toggle for FAQ items
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                if(answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                } else {
+                    document.querySelectorAll('.faq-answer').forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    answer.style.display = 'block';
+                }
+            });
+        });
+        
+        // Hide all answers by default
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
